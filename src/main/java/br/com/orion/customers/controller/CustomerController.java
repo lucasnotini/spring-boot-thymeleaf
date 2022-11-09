@@ -14,13 +14,13 @@ import java.util.Optional;
 @Controller
 public class CustomerController {
 
-    private CustomerRepository customerRepo;
+    private CustomerRepository customerRepo; //crio objeto para usar interface CustomerRepository
 
-    public CustomerController(CustomerRepository customerRepo){
+    public CustomerController(CustomerRepository customerRepo){ //construtor da classe CustomerController
         this.customerRepo = customerRepo;
     }
 
-    //quando esta url for acessada, vai executar o método e carregar pagina index
+    //quando esta url for acessada, vai executar o método e carregar a pagina index
     @GetMapping("/customers")
     public String customers(Model model){ //MÉTODO LISTAR CLIENTES
         model.addAttribute("customersList", customerRepo.findAll());

@@ -21,6 +21,7 @@
             <th>Telefone</th>
             <th>Email</th>
             <th>CPF</th>
+            <th>Ações</th>
         </tr>
         </thead>
         <tbody>
@@ -29,6 +30,9 @@
             <td th:text="${customer.telefone}"></td>
             <td th:text="${customer.email}"></td>
             <td th:text="${customer.cpf}"></td>
+            <td>
+                <a th:href="@{/customers/{id}(id=${customer.id})}" class="btn btn-primary">Alterar</a>
+                <a th:href="@{/customers/delete/{id}(id=${customer.id})}" class="btn btn-danger">Excluir</a>
             </td>
         </tr>
         </tbody>
